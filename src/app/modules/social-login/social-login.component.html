@@ -1,0 +1,43 @@
+<div class="container">
+
+  <!-- sign in options -->
+
+  <div class="col-md-6 mx-auto mt-5" *ngIf="!user">
+    <div class="card text-center">
+      <div class="card-header">
+        <h5 class="text-center">Sign In Using</h5>
+      </div>
+      <div class="card-body">
+        <button (click)="signInWithGoogle()" class="btn btn-light"><img src="../../../assets/google.png" class="icon"
+            alt="google-img"> Sign in Google</button> &nbsp;
+        <button (click)="signInWithFB()" class="btn btn-light"><img src="../../../assets/fb.png" class="icon"
+            alt="fb-img">Sign in Facebook</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- user Profile -->
+
+    <div class="col-md-6 mx-auto d-block mt-5" *ngIf="user">
+        <div class="card">
+            <div class="card-header">
+              <h5>Profile</h5>
+            </div>
+            <div  class="card-body">
+              <div class="row">
+                  <div class="col-md-6">
+                    <img class="card-img-top img-responsive photo" src="{{ user.photoUrl }}">
+                  </div>
+                  <div class="col-md-6">
+                      <h5>Hello {{user.name}}</h5>
+                      <h6>Welcome back to your Profile...</h6>
+                  </div>
+              </div>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-danger float-right" (click)="signOut()">Sign Out</button>
+            </div>
+        </div>
+    </div>
+
+</div>
