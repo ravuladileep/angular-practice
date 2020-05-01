@@ -2,3 +2,11 @@
   padding: 10px;
   margin: 10px;
 }
+
+#circle{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: red;
+  position: absolute;
+}

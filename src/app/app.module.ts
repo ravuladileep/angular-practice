@@ -8,6 +8,9 @@ import { RouterModule } from '@angular/router';
 
 import { SocialLoginModule } from 'angularx-social-login';
 import { AuthServiceConfig, GoogleLoginProvider, FacebookLoginProvider} from 'angularx-social-login';
+import { HttpClientModule } from '@angular/common/http';
+import { QueueService } from './services/queue.service';
+import { QueueRequestsComponent } from './modules/queue-requests/queue-requests.component';
 
 // configuring the authservice provider
 const config = new AuthServiceConfig([
@@ -28,19 +31,22 @@ export function provideConfig() {
 @NgModule({
   declarations: [
     AppComponent,
-    SocialLoginComponent
+    SocialLoginComponent,
+    QueueRequestsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule,
-    SocialLoginModule
+    SocialLoginModule,
+    HttpClientModule
   ],
   providers: [
     {
       provide: AuthServiceConfig,
       useFactory: provideConfig
-    }
+    },
+    QueueService
   ],
   bootstrap: [AppComponent]
 })
