@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'social-login', pathMatch: 'full' },
   { path: 'social-login', component: SocialLoginComponent },
   { path: 'queue-requests', component: QueueRequestsComponent },
+  {path: 'dsm', loadChildren: () => import('./dsm/dsm.module').then(m => m.DsmModule)},
   {path: '**', component: SocialLoginComponent}
 ];
 
