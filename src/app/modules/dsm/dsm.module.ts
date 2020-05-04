@@ -4,10 +4,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { TableComponent } from '../table/table.component';
 import { TableIdComponent } from '../table-id/table-id.component';
 
+
 const routes: Routes = [
   { path: '', redirectTo: 'table', pathMatch: 'full' },
-  { path: 'table', component: TableComponent},
-  { path: 'table/:id', component: TableIdComponent}
+  { path: 'table', loadChildren: () => import('../table-module/table.module').then(m => m.TableModule)},
+  { path: 'table/:id', loadChildren: () => import('../table-id-module/table-id.module').then(m => m.TableIdModule)}
 ];
 
 @NgModule({

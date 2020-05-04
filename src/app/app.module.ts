@@ -11,7 +11,10 @@ import { AuthServiceConfig, GoogleLoginProvider, FacebookLoginProvider} from 'an
 import { HttpClientModule } from '@angular/common/http';
 import { QueueService } from './services/queue.service';
 import { QueueRequestsComponent } from './modules/queue-requests/queue-requests.component';
-import { DsmModule } from './dsm/dsm.module';
+import { DsmModule } from './modules/dsm/dsm.module';
+import { TableModule } from './modules/table-module/table.module';
+import { TableIdModule } from './modules/table-id-module/table-id.module';
+
 
 
 // configuring the authservice provider
@@ -42,7 +45,9 @@ export function provideConfig() {
     RouterModule,
     SocialLoginModule,
     HttpClientModule,
-    DsmModule
+    DsmModule,
+    TableModule,
+    TableIdModule
   ],
   providers: [
     {
