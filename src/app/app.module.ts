@@ -14,6 +14,10 @@ import { QueueRequestsComponent } from './modules/queue-requests/queue-requests.
 import { DsmModule } from './modules/dsm/dsm.module';
 import { TableModule } from './modules/table-module/table.module';
 import { TableIdModule } from './modules/table-id-module/table-id.module';
+import { StoreModule} from '@ngrx/store';
+import { simpleReducer } from './reducers/simplereducer';
+import { StoreDemoComponent } from './modules/store-demo/store-demo.component';
+import { counterReducer } from './reducers/counter.reducer';
 
 
 
@@ -37,7 +41,8 @@ export function provideConfig() {
   declarations: [
     AppComponent,
     SocialLoginComponent,
-    QueueRequestsComponent
+    QueueRequestsComponent,
+    StoreDemoComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +52,8 @@ export function provideConfig() {
     HttpClientModule,
     DsmModule,
     TableModule,
-    TableIdModule
+    TableIdModule,
+    StoreModule.forRoot({message: simpleReducer, count: counterReducer})
   ],
   providers: [
     {

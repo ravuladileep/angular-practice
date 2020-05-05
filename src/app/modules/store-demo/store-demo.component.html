@@ -1,0 +1,17 @@
+<div class="container ">
+  <div class="p-5 m-5 text-center">
+    <h5>{{message$| async}}</h5>
+    <button class="btn btn-success" (click)="spanishMessage()">SPANISH</button>&nbsp;
+    <button class="btn btn-primary" (click)="frenchMessage()">FRENCH</button>
+  </div>
+</div>
+
+
+<div class="container">
+    <div class="text-center">
+        <button class="btn btn-success" (click)="increment()">increment</button>
+        <h5>{{count$|async}}</h5>
+        <button class="btn btn-danger" (click)="decrement()">decrement</button>&nbsp;
+        <button class="btn btn-primary" (click)="reset()">Reset</button>
+    </div>
+</div>
