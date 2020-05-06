@@ -53,7 +53,8 @@ export function provideConfig() {
     DsmModule,
     TableModule,
     TableIdModule,
-    StoreModule.forRoot({message: simpleReducer, count: counterReducer})
+    StoreModule.forRoot({message: simpleReducer, count: counterReducer}),
+    StoreModule.forRoot({}, {})
   ],
   providers: [
     {

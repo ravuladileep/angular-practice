@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SocialUser, AuthService, GoogleLoginProvider, FacebookLoginProvider } from 'angularx-social-login';
-import { QueueService } from 'src/app/services/queue.service';
+import { QueueService } from '../../services/queue.service';
 import { debounceTime, delay } from 'rxjs/operators';
 
 @Component({

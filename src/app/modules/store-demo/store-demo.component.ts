@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { increment, decrement, reset } from 'src/app/actions/counter.actions';
+import { increment, decrement, reset } from '../../actions/counter.actions';
 
 interface IappState {
   message: string;
