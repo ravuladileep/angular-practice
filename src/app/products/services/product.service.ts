@@ -1,19 +1,19 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs";
 
-import { Product } from '../models/product';
+import { Product } from "../models/product";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class ProductService {
   constructor(private http: HttpClient) {}
 
-  baseUrl = 'http://localhost:3000/products/';
+  baseUrl: string = "http://localhost:3000/products/";
 
-  createProduct(model: Product) {
-    return this.http.post(this.baseUrl, model);
+  createProduct(model: Product): Observable<Product> {
+    return this.http.post<Product>(this.baseUrl, model);
   }
 
   getProducts(): Observable<Product[]> {
@@ -24,11 +24,14 @@ export class ProductService {
     return this.http.get<Product>(this.baseUrl + productId);
   }
 
-  editProduct(model: Product): Observable<Product> {
-    return this.http.put<Product>(this.baseUrl + model.id, model);
+  editProduct(
+    productId: string | number,
+    changes: Partial<Product>
+  ): Observable<Product> {
+    return this.http.put<Product>(this.baseUrl + productId, changes);
   }
 
-  deleteProduct(productId: number) {
+  deleteProduct(productId: string) {
     return this.http.delete(this.baseUrl + productId);
   }
 }
