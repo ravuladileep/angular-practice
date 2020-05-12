@@ -123,6 +123,7 @@
   },
   "defaultProject": "angular-practice",
   "cli": {
+    "defaultCollection": "@ngrx/schematics",
     "analytics": false
   }
 }
