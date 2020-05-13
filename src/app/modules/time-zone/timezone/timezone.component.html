@@ -1,0 +1,13 @@
+<div class="container pt-5">
+  <h5 class="text-center text-primary">Time-Zone</h5>
+</div>
+
+<div class="container">
+  <div class="col-md-6">
+      <input  [(ngModel)]="selectedDate" (ngModelChange)="getDate()"  [owlDateTime]="dt1" [owlDateTimeTrigger]="dt1" placeholder="Date Time">
+      <owl-date-time #dt1></owl-date-time>
+  </div>
+  <select [(ngModel)]="selectedTimeZone"  (ngModelChange)="updateTimeZone()"  class="form-control col-md-6">
+      <option [value]="item.time" *ngFor="let item of timeZones">{{item.name}}  {{item.time}}</option>
+  </select>
+</div>
