@@ -6,7 +6,7 @@ import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
-  {path: '', component: TimezoneComponent}
+  {path: 'time', component: TimezoneComponent}
 ];
 
 @NgModule({

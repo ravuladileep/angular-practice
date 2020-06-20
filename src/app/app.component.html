@@ -1,1 +1,33 @@
 <router-outlet></router-outlet>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <h5>lorem ipsum</h5>
+      <div class="list" *ngFor="let data of restaurantsData">
+        <h4>{{data.name}}</h4>
+        <!-- <p>star rating</p> -->
+        <ng-template #t let-fill="fill">
+          <span class="star" [class.full]="fill === 100">
+            <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
+          </span>
+        </ng-template>
+        <ngb-rating [(rate)]="data.rating" [starTemplate]="t" [readonly]="false" [max]="5"></ngb-rating>
+        <p>{{data.vicinity}}</p>
+        <!-- <h6>{{data.opening_hours.open_now }}</h6> -->
+        <!-- <h6>photos</h6> -->
+      </div>
+    </div>
+    <div class="col-md-4 second">
+      <div class="details">
+          <p class="closed-temp text-white p-1">Closed Temporarily</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" (mapClick)="placeMarker($event)">
+        <agm-marker [latitude]="lat" [longitude]="lng" [label]="'M'"></agm-marker>
+      </agm-map>
+    </div>
+  </div>
+
+</div>
