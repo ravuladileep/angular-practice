@@ -1,0 +1,30 @@
+
+agm-map{
+  height: 350px;
+  /* width: 300; */
+}
+.list {
+  text-align: left;
+  padding: 10px;
+  background:#f9f6f6;
+}
+
+.closed-temp{
+  background: #ea071c;
+}
+
+.star {
+  position: relative;
+  display: inline-block;
+  font-size: 1rem;
+  color: #d3d3d3;
+}
+.full {
+  color: red;
+}
+.half {
+  position: absolute;
+  display: inline-block;
+  overflow: hidden;
+  color: red;
+}
