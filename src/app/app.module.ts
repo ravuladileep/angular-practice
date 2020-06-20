@@ -23,9 +23,6 @@ import { AppService } from './app.service';
     HttpClientModule,
     TimeZoneModule,
     FormsModule,
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyCyKAAu8QoYwwxJRLa4_4ZGSj0e2iVUBRA'
-    }),
     NgbModule
   ],
   providers: [AppService],
